@@ -1,0 +1,16 @@
+{
+  "name": "expense-tracker",
+  "version": "1.0.0",
+  "description": "Simple expense tracker with weekly allowance countdown",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "test": "node server.js & sleep 1; curl -s http://localhost:3000/api/balance; echo; curl -s -X POST http://localhost:3000/api/expenses -H \"Content-Type: application/json\" -d '{\"amount\":10,\"category\":\"Food\",\"type\":\"one-time\"}'; echo; pkill -f 'node server.js'"
+  },
+  "keywords": ["expense-tracker", "budget", "finance"],
+  "license": "MIT",
+  "dependencies": {
+    "express": "^5.3.0"
+  }
+}
